@@ -1,0 +1,23 @@
+<!-- About Section -->
+<section class="success" id="resultSection" ng-controller="testsViewController">
+    <div class="container" >
+        <div class="row" >
+            <div class="col-lg-12 text-center">
+                <h3>Tests Results</h3>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <h3>Performed Tests</h3>
+            </div>
+        </div>
+        <div class="row" ng-repeat="aTest in tests">
+            <div class="col-sm-4" > URL : {{aTest.options.URL}} </div>
+            <button class="col-sm-8" class="btn btn-info" ng-click="showTest(aTest)"> Show Details </button>
+        </div>
+        <div ng-show="show">
+            <test></test>
+        </div>
+    </div>
+</section>

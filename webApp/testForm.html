@@ -1,0 +1,112 @@
+<section id="testSection" ng-controller="testFormController">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Monkey test a web site</h2>
+                <hr class="star-primary">
+                <div class="inner cover" >
+                    <form name="crawlForm" class="form-horizontal">
+                        <div title="The URL of the site you want to crawl. Mrs Sam won't go outside of that URL." class="form-group">
+                            <label for="optionURL" class="col-sm-4 control-label">URL</label>
+                            <div class="col-sm-6">
+                                <input type="url" class="form-control" id="optionURL" ng-model="options.URL" placeholder="http://www.amazon.com">
+                            </div>
+                        </div>
+                        <div title="The maximum number of steps for each scenario randomly created by Mrs. Sam." class="form-group">
+                            <label for="optionMaxsteps" class="col-sm-4 control-label">Maxsteps</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="optionMaxsteps" ng-model="options.crawler.maxsteps" placeholder="5">
+                            </div>
+                        </div>
+                        <div title="The maximum number of runs for each scenario." class="form-group">
+                            <label for="optionMaxruns" class="col-sm-4 control-label">Maxruns</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="optionMaxruns" ng-model="options.crawler.maxruns" placeholder="5">
+                            </div>
+                        </div>
+                        <div title="The time (in min) Mrs. Sam will spend to randomly crawl the web site." class="form-group">
+                            <label for="optionTime" class="col-sm-4 control-label">Time</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="optionTime" ng-model="options.crawler.time" placeholder="2">
+                            </div>
+                        </div>
+                        <div title="The time (in ms) Mrs. Sam. will wait between two steps." class="form-group">
+                            <label for="optionWait" class="col-sm-4 control-label">Wait</label>
+                            <div class="col-sm-6">
+                                <input type="number" class="form-control" id="optionWait" ng-model="options.crawler.wait" placeholder="1000">
+                            </div>
+                        </div>
+                        <div title="The map records all HTML pages and compare them." class="form-group">
+                            <label for="map" class="col-sm-4 control-label">Map Generation</label>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="map" checked class="form-horizontal" ng-model="options.map.active"> Activate
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div title="The actions Mrs. Sam will consider for randomly creating a scenario." class="form-group">
+                            <label class="col-sm-4 control-label">Actions</label>
+                            <div class="col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="optionClick" checked class="form-horizontal" ng-model="options.scenario.click.active"> Click
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="optionScroll" class="form-horizontal" ng-model="options.scenario.scroll.active"> Scroll
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="optionForm" checked class="form-horizontal" ng-model="options.scenario.form.active"> Form
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="optionBack" checked class="form-horizontal" ng-model="options.scenario.back.active"> Back
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="optionMouseOver" class="form-horizontal" ng-model="options.scenario.mouseover.active"> MouseOver
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-6">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" id="optionWaitOver" class="form-horizontal" ng-model="options.scenario.wait.active"> Wait
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="lead">
+                            <button type="submit" class="btn btn-lg btn-default" ng-click="crawl(options)">TEST</button>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

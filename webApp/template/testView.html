@@ -1,0 +1,145 @@
+<h3>Details</h3>
+<h4>Mrs Sam Options</h4>
+<div class="row">
+    <div class="col-sm-2">URL</div>
+    <div class="col-sm-10">{{test.options.URL}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">MaxSteps</div>
+    <div class="col-sm-10">{{test.options.crawler.maxsteps}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">MaxRuns</div>
+    <div class="col-sm-10">{{test.options.crawler.maxruns}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Time</div>
+    <div class="col-sm-10">{{test.options.crawler.time}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Wait</div>
+    <div class="col-sm-10">{{test.options.crawler.wait}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">ClickAction</div>
+    <div class="col-sm-10">{{test.options.scenario.click.active}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">ScrollAction</div>
+    <div class="col-sm-10">{{test.options.scenario.scroll.active}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">FormAction</div>
+    <div class="col-sm-10">{{test.options.scenario.form.active}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">BackAction</div>
+    <div class="col-sm-10">{{test.options.scenario.back.active}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">MouseOverAction</div>
+    <div class="col-sm-10">{{test.options.scenario.mouseover.active}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">WaitAction</div>
+    <div class="col-sm-10">{{test.options.scenario.wait.active}}</div>
+</div>
+<h3>Statistics</h3>
+<div class="row">
+    <div class="col-sm-2">Duration</div>
+    <div class="col-sm-10">{{statistics.duration}} ms</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Number of scenario</div>
+    <div class="col-sm-10">{{statistics.numberOfExecuterScenario}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Number of Console Error</div>
+    <div class="col-sm-10">{{statistics.consoleErrors}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Number of Parge Error</div>
+    <div class="col-sm-10">{{statistics.pageErrors}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Number of HTTP Error</div>
+    <div class="col-sm-10">{{statistics.httpErrors}}</div>
+</div>
+<div class="row">
+    <div class="col-sm-2">Number of Crawler Error</div>
+    <div class="col-sm-10">{{statistics.crawlerErrors}}</div>
+</div>
+
+<h3>Errors</h3>
+<h4>Console Errors</h4>
+<div class="row">
+    <div class="col-sm-7">Description</div>
+    <div class="col-sm-4">Scenario</div>
+    <div class="col-sm-1">Download</div>
+</div>
+<div ng-repeat="error in consoleErrors" class="row">
+    <div class="col-sm-7">{{error.value}}</div>
+    <div class="col-sm-4">
+        <span title="{{action.selector}}" ng-repeat="action in getScenario(error.scenario_id).actions">
+    {{action.type}}</span>
+    </div>
+    <div class="col-sm-1"><button ng-click="saveScenario(error.scenario_id)">Download</button></div>
+</div>
+<h4>Page Errors</h4>
+<div class="row">
+    <div class="col-sm-7">Description</div>
+    <div class="col-sm-4">Scenario</div>
+    <div class="col-sm-1">Download</div>
+</div>
+<div ng-repeat="error in pageErrors" class="row">
+    <div class="col-sm-7">{{error.value}}</div>
+    <div class="col-sm-4">
+        <span title="{{action.selector}}" ng-repeat="action in getScenario(error.scenario_id).actions">
+    {{action.type}}</span>
+    </div>
+    <div class="col-sm-1"><button ng-click="saveScenario(error.scenario_id)">Download</button></div>
+</div>
+<h4>HTTP Errors</h4>
+<div class="row">
+    <div class="col-sm-7">Description</div>
+    <div class="col-sm-4">Scenario</div>
+    <div class="col-sm-1">Download</div>
+</div>
+<div ng-repeat="error in httpErrors" class="row">
+    <div class="col-sm-7">{{error.value}}</div>
+    <div class="col-sm-4">
+        <span title="{{action.selector}}" ng-repeat="action in getScenario(error.scenario_id).actions">
+    {{action.type}}</span>
+    </div>
+    <div class="col-sm-1"><button ng-click="saveScenario(error.scenario_id)">Download</button></div>
+</div>
+<h4>Crawler Errors</h4>
+<div class="row">
+    <div class="col-sm-7">Description</div>
+    <div class="col-sm-4">Scenario</div>
+    <div class="col-sm-1">Download</div>
+</div>
+<div ng-repeat="error in crawlerErrors" class="row">
+    <div class="col-sm-7">{{error.value}}</div>
+    <div class="col-sm-4">
+        <span title="{{action.selector}}" ng-repeat="action in getScenario(error.scenario_id).actions">
+    {{action.type}}</span>
+    </div>
+    <div class="col-sm-1"><button ng-click="saveScenario(error.scenario_id)">Download</button></div>
+</div>
+<h3>Executed Scenario</h3>
+<div class="row">
+    <div class="col-sm-2">Runs</div>
+    <div class="col-sm-5">Actions</div>
+    <div class="col-sm-5">Errors</div>
+</div>
+<div ng-repeat="scenario in executedScenario" class="row">
+    <div class="col-sm-2">{{scenario.run}}</div>
+    <div class="col-sm-4">
+        <span title="{{action.selector}}" ng-repeat="action in scenario.actions">
+    {{action.type}}</span>
+    </div>
+    <div class="col-sm-5">
+        <span title="{{action.selector}}" ng-repeat="action in scenario.actions"><span title="{{action.errors}}">[{{action.errors.length}} error(s)]</span></span>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Super</title>
+</head>
+<body>
+Sample HTML page
+
+<a href="a.html" id="a">Simple Link</a>
+<a href="a.html" id="ab">Link to a same page</a>
+<a href="b.html" id="b">Link to another page</a>
+<a href="">To null</a>
+<a href="#">To #</a>
+<a href="https://github.com/xblanc33/mrs-sam">Outside link => Mrs. Sam </a>
+<a href="https://noserverhere.com">No DNS link No Server</a>
+
+<a href="nfile.html" id="nofile" >No file</a>
+
+<img width="50" src="img/test.png"> </img>
+
+
+<form id="form">
+	<input type="text">
+	<input id="button" type="button" value="ok">
+	<input id="submit" type="submit" value="submit">
+</form>
+<div id="form-out">
+</div>
+
+<script type="text/javascript">
+	window.onload = function() {
+		document.getElementById('button').onclick = function() {
+			document.getElementById('form-out').innerHTML = "button clicked";
+		};
+
+		document.getElementById('submit').onclick = function() {
+			document.getElementById('form-out').innerHTML = "submit clicked";
+		};
+
+	}
+</script>
+
+</body>
+</html>

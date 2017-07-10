@@ -1,0 +1,44 @@
+{
+    "crawler": {
+        "maxsteps": 5,
+        "maxruns": 5,
+        "time": 2,
+        "wait": 1000,
+        "show": false
+    },
+    "map": {
+        "active": false,
+        "state": "STRUCTURAL"
+    },
+    "diff": {
+        "active": false,
+        "differ":"LINE"
+    },
+    "scenario": {
+        "click": {
+            "active": true
+        },
+        "scroll": {
+            "active": true,
+            "scroll_x": 2000,
+            "scroll_y": 4000
+        },
+        "wait": {
+            "active": false,
+            "wait": 4000
+        },
+        "mouseover": {
+            "active": false
+        },
+        "form": {
+            "active": true
+        },
+        "back": {
+            "active": true
+        }
+    },
+    "replay": {
+        "active" : false,
+        "check" : false
+    }
+}

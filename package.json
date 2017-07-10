@@ -1,0 +1,48 @@
+{
+  "name": "mrs-sam",
+  "version": "0.0.1",
+  "description": "Mrs Sam is a JS Web Monkey Tester. It aims to automatically detect defaults within web sites.",
+  "main": "testerCLI.js",
+  "scripts": {
+    "postinstall": "node_modules/.bin/bower install",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrs-sam/scenario.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "Crawler",
+    "MonkeyTest"
+  ],
+  "author": "Xavier Blanc",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrs-sam/scenario/issues"
+  },
+  "homepage": "https://github.com/mrs-sam/scenario#readme",
+  "dependencies": {
+    "amqplib": "^0.5.1",
+    "body-parser": "^1.17.2",
+    "bower": "^1.8.0",
+    "diff": "^3.2.0",
+    "express": "^4.15.3",
+    "hashmap": "^2.1.0",
+    "mongodb": "^2.2.27",
+    "nightmare": "^2.10.0",
+    "path": "^0.12.7",
+    "present": "^1.0.0",
+    "scanjs": "^1.1.4",
+    "urijs": "^1.18.10",
+    "vo": "^4.0.2",
+    "winston": "^2.3.0",
+    "yargs": "^7.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^3.19.0",
+    "eslint-config-standard": "^10.2.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
