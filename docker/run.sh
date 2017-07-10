@@ -1,7 +1,7 @@
 #!/bin/bash
 mkdir work
 cd work
-git https://github.com/mrs-sam/scenario.git
+git clone https://github.com/mrs-sam/scenario.git
 ls 
 cd scenario
 npm install
